@@ -119,7 +119,8 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 let orderTotals = orders.map((el, i, arr) => {
-  return el["price"] += el["tax"];
+  console.log(el["price"], el["tax"])
+  return el["price"] * el["tax"] + el["price"]
 })
 console.log(orderTotals)
 
@@ -140,6 +141,12 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 /*
   Use a high order method to create to get the sum of bobsTotal.
 */
-
-let bobsTotal 
+let bobsTotal = purchases.reduce((total, el, i, arr) => {
+    if (el['owner'] === "Bob") {
+      console.log(total, el['price'])
+      return total += el['price']
+    }
+    return total
+}, 0)
+ 
 

@@ -50,13 +50,19 @@ var employees = [
     3. Return the updated employee array.
 */
 
-function employeeUpdater() {
-  for (let i = 0; i < employees.length; i++) {
-    if (employees["firstName"] === "Theo") {
-      delete employees[i];
-    }
+ function employeeUpdater() {
+   for (let i = 0; i < employees.length; i++) {
+     if (employees[i].firstName === "Theo") {
+       delete employees[i];
+     }
+     if (employees[i].firstName === "Lorie") {
+       employees[i].department = "HR";
+     }
+   }
+   return employees;
   }
-}
+ 
+ 
 
 
 
@@ -74,17 +80,17 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-function removeDuplicates() {
-  let newList = [];
-  for (let i = 0; i < workplaceAccidents.length; i++) {
-    for (let j = workplaceAccidents.length; i > 0; i--) {
-      if (workplaceAccidents[i] === workplaceAccidents[j] && i === j) {
-        delete workplaceAccidents[i]
-      }
-    }
-  }
-  return newList;
-}
+ function removeDuplicates() {
+   let newList = [];
+   for (let i = 0; i < workplaceAccidents.length; i++) {
+     for (let j = workplaceAccidents.length; i > 0; i--) {
+       if (workplaceAccidents[i] === workplaceAccidents[j] && i === j) {
+         delete workplaceAccidents[i]
+       }
+     }
+   }
+   return newList;
+ }
 
 
 
